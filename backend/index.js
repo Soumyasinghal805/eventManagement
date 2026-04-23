@@ -17,6 +17,9 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(cors());
 
 app.use('/eventRoute', eventRoute);
+app.get("/health", (req, res) => {
+  res.status(200).json({ status: "OK" });
+});
 app.listen(4000, () => {
     console.log("Server started at 4000");
 })
